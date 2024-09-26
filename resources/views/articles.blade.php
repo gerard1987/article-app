@@ -24,7 +24,7 @@
                     <td>{{ $article->id }}</td>
                     <td>{{ $article->name }}</td>
                     <td>${{ number_format($article->price, 2) }}</td>
-                    <td><a href="<?= url("/articles/edit/{{ $article->id }}"); ?>">Edit</td>
+                    <td><a href="<?= url("/articles/edit/"); ?>">Edit</td>
                     <td><a href="<?= url("/articles/edit"); ?>">Edit</td>
                 </tr>
             @endforeach
