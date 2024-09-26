@@ -13,4 +13,14 @@ class ArticleController extends Controller
 
         return view('articles', ['articles' => $articles]);
     }
+
+    public function edit($id)
+    {
+        return view('edit', ['articles' => $articles]);
+    }
+
+    public function delete($idjmn)
+    {
+        return view('articles', ['articles' => $articles]);
+    }
 }

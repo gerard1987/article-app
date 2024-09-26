@@ -1,13 +1,34 @@
+<header>
+    @include('layouts.header')
+</header>
+
 <div>
 <h1>Articles List</h1>
 
 @if($articles->isEmpty())
     <p>No articles found.</p>
 @else
-    <ul>
-        @foreach($articles as $article)
-            <li>{{ $article->name }} - ${{ number_format($article->price, 2) }}</li>
-        @endforeach
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Article Name</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($articles as $article)
+                <tr>
+                    <td>{{ $article->id }}</td>
+                    <td>{{ $article->name }}</td>
+                    <td>${{ number_format($article->price, 2) }}</td>
+                    <td><a href="<?= url("/articles/edit/{{ $article->id }}"); ?>">Edit</td>
+                    <td><a href="<?= url("/articles/edit"); ?>">Edit</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 @endif
 </div>
